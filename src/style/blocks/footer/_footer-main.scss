@@ -1,0 +1,96 @@
+.footer-main {
+  padding-top: 30px;
+  padding-bottom: 60px;
+  color: var(--white);
+  background-color: var(--bg-dark);
+  text-align: center;
+
+  &__content {
+    display: grid;
+    gap: 30px;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+
+    & a {
+      display: flex;
+    }
+
+    &__img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  &__nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    row-gap: 16px;
+
+    & ul {
+      display: grid;
+      row-gap: 8px;
+      margin: 0;
+      margin-top: 16px;
+      padding: 0;
+      list-style: none;
+
+      & a {
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--gray);
+      }
+    }
+
+    & a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 700;
+    }
+  }
+
+  @include media-min ($md) {
+    text-align: left;
+
+    &__content {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+    }
+
+    &__logo {
+      grid-column: span 3;
+
+      & img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+  }
+
+  @include media-min ($xl) {
+    padding-top: 40px;
+
+    &__content {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__logo {
+      grid-column: auto;
+    }
+
+    &__nav {
+      & a {
+        transition: color .2s ease-in-out;
+
+        &:hover {
+          color: var(--accent);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

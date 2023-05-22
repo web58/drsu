@@ -1,0 +1,67 @@
+<section class="service-request">
+  <div class="service-request__descr">
+    <div class="container service-request__descr-container">
+      <h2 class="indent-reset title-decor h1 service-request__title">Оставьте заявку на ремонт
+        дороги</h2>
+      <p class="indent-reset">Если вас интересует дорожное строительство, ремонт дорог – обращайтесь к нам! Мы готовы предоставить грамотную консультацию, оказать всестороннюю поддержку и принять заказ. Вы непременно останетесь довольны результатом!</p>
+    </div>
+  </div>
+  <div class="service-request__form-wrapper">
+    <div class="container">
+      <form class="form service-request__form"
+            id="service-request-form"
+            data-validate>
+        <input type="hidden"
+               name="Страница"
+               value="Главная">
+        <input type="hidden"
+               name="Форма"
+               value="Оставьте заявку на ремонт дороги">
+        <label class="small-text form__label">
+          <span>Ваше имя *</span>
+          <input class="form__input"
+                 type="text"
+                 name="Имя"
+                 placeholder="Ваше имя"
+                 data-validate="text"
+                 required>
+        </label>
+        <label class="small-text form__label">
+          <span>Телефон *</span>
+          <input class="form__input"
+                 type="tel"
+                 name="Имя"
+                 placeholder="+7 ___ ___ __ __"
+                 data-validate="phone"
+                 required>
+        </label>
+        <label class="small-text form__label">
+          <span>Email *</span>
+          <input class="form__input"
+                 type="email"
+                 name="Имя"
+                 placeholder="example@mail.ru"
+                 data-validate="email"
+                 required>
+        </label>
+        <label class="small-text form__label">
+          <span>Комментарий</span>
+          <textarea class="form__input form__textarea"
+                    name="Имя"
+                    placeholder="Комментарий"></textarea>
+        </label>
+        <div>
+          <input class="form__checkbox"
+                 type="checkbox"
+                 id="service-request-confirm"
+                 data-validate="confirm"
+                 required>
+          <label class="nano-text"
+                 for="service-request-confirm">@include('../utils/confirm-text.html')</label>
+        </div>
+        <button class="btn-reset btn service-request__submit"
+                type="submit">Оставить заявку</button>
+      </form>
+    </div>
+  </div>
+</section>

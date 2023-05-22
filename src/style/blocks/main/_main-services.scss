@@ -1,0 +1,46 @@
+.main-services {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--white);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/lines-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__list {
+    display: grid;
+    gap: 20px;
+    counter-reset: services;
+  }
+
+  @include media-min ($md) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+
+  @include media-min ($xl) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}

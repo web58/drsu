@@ -1,0 +1,14 @@
+.post-documents {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  max-width: 635px;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 10px;
+  }
+}

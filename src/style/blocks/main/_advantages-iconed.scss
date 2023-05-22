@@ -1,0 +1,85 @@
+.advantages-iconed {
+  display: grid;
+  row-gap: 10px;
+
+  &__item {
+    display: grid;
+    grid-template-columns: 70px auto;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--white);
+    background-image: linear-gradient(to right, var(--accent) 80px, var(--white) 80px);
+    border-radius: 2px;
+    min-height: 80px;
+
+    &--decored {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      grid-template-columns: 60px auto;
+      align-items: start;
+      padding-left: 0;
+      background-image: linear-gradient(to right, var(--accent) 60px, var(--white) 60px);
+      border: 1px solid var(--light-gray);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        z-index: 0;
+        border-width: 0 0 30px 30px;
+        border-style: solid;
+        border-color: transparent transparent var(--accent) transparent;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__text {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__text-content {
+    padding-top: 16px;
+
+    & p {
+      margin: 0;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__item {
+      &--decored {
+        grid-template-columns: 70px auto;
+        padding: 24px;
+        padding-left: 10px;
+        background-image: linear-gradient(to right, var(--accent) 80px, var(--white) 80px);
+      }
+    }
+
+    &__text {
+      padding-left: 30px;
+      padding-right: 20px;
+    }
+
+    &__icon {
+      &--big {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}

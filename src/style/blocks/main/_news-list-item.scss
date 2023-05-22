@@ -1,0 +1,113 @@
+.news-list-item {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  border-radius: 2px;
+
+  &__link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    & img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 24px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: var(--white);
+    background-color: var(--bg-dark-60);
+    width: 100%;
+    height: 100%;
+
+    & > span {
+      margin-bottom: 12px;
+    }
+  }
+
+  @include media-min ($md) {
+    &__title {
+      &--main {
+        height: auto;
+      }
+    }
+  }
+
+  @include media-min ($xl) {
+    min-height: 420px;
+
+    &__link {
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        & .news-list-item__cover {
+          & img {
+            opacity: 0;
+          }
+        }
+
+        & .news-list-item__title {
+          background-color: transparent;
+
+          & > span {
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    &__cover {
+      background-color: var(--accent);
+
+      & img {
+        transition: opacity .3s ease-in-out;
+      }
+    }
+
+    &__title {
+      height: auto;
+
+      & span {
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 18px;
+          height: 12px;
+          margin-left: 10px;
+          background-image: url("data:image/svg+xml,%3Csvg width='20' height='14' viewBox='0 0 20 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 7H18M18 7L11.6053 13M18 7L11.6053 1' stroke='%23FFFFFF' stroke-width='2.5'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          opacity: 0;
+          transition: opacity .3s ease-in-out;
+        }
+      }
+    }
+  }
+}

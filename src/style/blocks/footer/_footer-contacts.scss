@@ -1,0 +1,70 @@
+.footer-contacts {
+  display: grid;
+  row-gap: 16px;
+  justify-items: center;
+  padding-top: 10px;
+
+  &__cb {
+    display: grid;
+    row-gap: 4px;
+  }
+
+  &__phone {
+    & a {
+      color: inherit;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+
+  &__modal-trigger {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  &__shedule {
+    margin-top: 4px;
+  }
+
+  &__email {
+    & a {
+      color: inherit;
+    }
+  }
+
+  @include media-min ($md) {
+    padding-top: 0;
+    justify-items: start;
+  }
+
+  @include media-min ($xl) {
+    &__phone {
+      & a {
+        transition: color .2s ease-in-out;
+
+        &:hover {
+          color: var(--accent);
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__modal-trigger {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &__email {
+      & a {
+        transition: color .2s ease-in-out;
+
+        &:hover {
+          color: var(--accent);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

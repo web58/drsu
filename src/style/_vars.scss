@@ -1,0 +1,21 @@
+:root {
+  --white: #FFFFFF;
+  --black: #2B2A29;
+  --black-30: rgba(0, 0, 0, 0.3);
+  --accent: #FF720D;
+  --bg-dark: #404040;
+  --bg-dark-60: rgba(64, 64, 64, 0.6);
+  --bg-light: #F9F9F9;
+  --dark-gray: #4D4D4D;
+  --gray: #B8B8B8;
+  --light-gray: #E1DFDF;
+  --error: rgba(227, 6, 19, 1);
+}
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$main-font: "Onest";
+$alt-font: "Furore";
+$mobile-min-width: 360px;

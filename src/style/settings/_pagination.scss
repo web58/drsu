@@ -1,0 +1,99 @@
+.pagination {
+  display: flex;
+  margin: 0;
+  margin-right: -6px;
+  padding: 0;
+  list-style: none;
+
+  & > li {
+    margin-right: 6px;
+  }
+
+  & a,
+  & span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    line-height: 1;
+    color: inherit;
+    background-color: var(--white);
+    border: 1px solid transparent;
+    border-radius: 50%;
+    white-space: nowrap;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  & .prev,
+  & .next {
+    & a {
+      font-size: 0;
+      width: 44px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 24px 16px;
+      border-color: var(--accent);
+      border-radius: 36px;
+    }
+  }
+
+  & .prev {
+    margin-right: 30px;
+
+    & a {
+      background-image: url("data:image/svg+xml,%3Csvg width='25' height='18' viewBox='0 0 25 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 9L0.999998 9M0.999998 9L8.07692 1M0.999998 9L8.07692 17' stroke='%23FF720D'/%3E%3C/svg%3E");
+    }
+  }
+
+  & .next {
+    margin-left: 30px;
+
+    & a {
+      background-image: url("data:image/svg+xml,%3Csvg width='25' height='18' viewBox='0 0 25 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 9H24M24 9L16.9231 17M24 9L16.9231 1' stroke='%23FF720D'/%3E%3C/svg%3E");
+    }
+  }
+
+  & .active {
+    & span {
+      color: var(--white);
+      background-color: var(--accent);
+    }
+  }
+
+  @include media-min ($xl) {
+    & a {
+      transition: border-color .15s ease-in-out, background-color .15s ease-in-out;
+
+      &:hover {
+        border-color: var(--accent);
+      }
+    }
+
+    & .prev,
+    & .next {
+      & a {
+        &:hover {
+          background-color: var(--accent);
+        }
+      }
+    }
+
+    & .prev {
+      & a {
+        &:hover {
+          background-image: url("data:image/svg+xml,%3Csvg width='25' height='18' viewBox='0 0 25 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 9L0.999998 9M0.999998 9L8.07692 1M0.999998 9L8.07692 17' stroke='%23FFFFFF'/%3E%3C/svg%3E");
+        }
+      }
+    }
+
+    & .next {
+      & a {
+        &:hover {
+          background-image: url("data:image/svg+xml,%3Csvg width='25' height='18' viewBox='0 0 25 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 9H24M24 9L16.9231 17M24 9L16.9231 1' stroke='%23FFFFFF'/%3E%3C/svg%3E");
+        }
+      }
+    }
+  }
+}

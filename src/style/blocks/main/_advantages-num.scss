@@ -1,0 +1,29 @@
+.advantages-num {
+  display: grid;
+  row-gap: 10px;
+
+  &__item {
+    display: grid;
+    row-gap: 12px;
+    padding: 20px 30px;
+    background-color: var(--white);
+    border-radius: 2px;
+    text-align: center;
+  }
+
+  @include media-min ($md) {
+    &__item {
+      text-align: left;
+    }
+  }
+
+  @include media-min ($xl) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+
+    &__item {
+      padding: 30px;
+      padding-bottom: 40px;
+    }
+  }
+}

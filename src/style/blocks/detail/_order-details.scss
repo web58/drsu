@@ -1,0 +1,38 @@
+.order-details {
+  position: relative;
+  padding: 16px;
+  color: inherit;
+  background-color: var(--white);
+  border: 1px solid var(--accent);
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    pointer-events: none;
+    right: 0;
+    top: 0;
+    border-color: transparent var(--accent) transparent transparent;
+    border-width: 0 24px 24px 0;
+  }
+
+  & dt {
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--accent);
+
+    &::after {
+      content: ': ';
+    }
+  }
+
+  & dd {
+    margin: 0;
+
+    &:not(:last-of-type) {
+      margin-bottom: 16px;
+    }
+  }
+}

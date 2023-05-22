@@ -1,0 +1,63 @@
+<div class="hystmodal hystmodal--simple"
+     id="callback-modal"
+     aria-hidden="true">
+  <div class="hystmodal__wrap">
+    <div class="hystmodal__window hystmodal__window--form"
+         role="dialog"
+         aria-modal="true">
+      <section class="modal">
+        <button class="btn-reset modal__close"
+                type="button"
+                aria-label="Закрыть окно"
+                data-hystclose>
+          <svg class="modal__close-icon"
+               width="18"
+               height="18"
+               aria-hidden="true">
+            <use xlink:href="img/sprite.svg#icon-cross"></use>
+          </svg>
+        </button>
+        <h2 class="indent-reset title-decor modal__title">Заказать звонок</h2>
+        <form class="form modal__form"
+              id="callback-modal-form"
+              data-validate>
+          <input type="hidden"
+                 name="Страница"
+                 value="Главная">
+          <input type="hidden"
+                 name="Форма"
+                 value="Заказать звонок">
+          <label class="small-text form__label">
+            <span>Ваше имя *</span>
+            <input class="form__input"
+                   type="text"
+                   name="Имя"
+                   placeholder="Ваше имя"
+                   data-validate="text"
+                   required>
+          </label>
+          <label class="small-text form__label">
+            <span>Телефон *</span>
+            <input class="form__input"
+                   type="tel"
+                   name="Имя"
+                   placeholder="+7 ___ ___ __ __"
+                   data-validate="phone"
+                   required>
+          </label>
+          <div>
+            <input class="form__checkbox"
+                   type="checkbox"
+                   id="callback-modal-confirm"
+                   data-validate="confirm"
+                   required>
+            <label class="nano-text"
+                   for="callback-modal-confirm">@include('../utils/confirm-text.html')</label>
+          </div>
+          <button class="btn-reset btn modal__submit"
+                  type="submit">Отправить</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

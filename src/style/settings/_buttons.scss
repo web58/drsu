@@ -1,0 +1,67 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $alt-font, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.15;
+  padding: 18px 32px;
+  color: var(--white);
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &--small {
+    padding: 14px 24px;
+  }
+
+  &--second {
+    position: relative;
+    z-index: 1;
+    color: var(--accent);
+    background-color: var(--white);
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 0;
+      bottom: 0;
+      border-color: transparent transparent transparent var(--accent);
+      border-width: 18px 0 0 18px;
+    }
+
+    &::after {
+      right: 0;
+      top: 0;
+      border-color: transparent var(--accent) transparent transparent;
+      border-width: 0 18px 18px 0;
+    }
+  }
+
+  @include media-min ($xl) {
+    transition: color .2s ease-in-out, background-color .2s ease-in-out;
+
+    &:hover {
+      color: var(--accent);
+      background-color: var(--white);
+    }
+
+    &--second {
+      &:hover {
+        color: var(--white);
+        background-color: var(--accent);
+      }
+    }
+  }
+}

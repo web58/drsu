@@ -1,0 +1,24 @@
+.about-info {
+  padding: 30px;
+  background-color: var(--white);
+  border-radius: 2px;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__descr {
+    margin-bottom: 30px;
+  }
+
+  @include media-min ($md) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  @include media-min ($xl) {
+    padding: 60px;
+  }
+}

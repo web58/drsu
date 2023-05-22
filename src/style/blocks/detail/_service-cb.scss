@@ -1,0 +1,85 @@
+.service-cb {
+  position: relative;
+  padding: 40px 20px;
+  background-color: var(--white);
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    bottom: 0;
+    border-color: transparent transparent transparent var(--accent);
+    border-width: 32px 0 0 32px;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    border-color: transparent var(--accent) transparent transparent;
+    border-width: 0 32px 32px 0;
+  }
+
+  &__overlay {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../img/lines-bg.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__form {
+    --text-color: var(--black);
+    --border-color: var(--black);
+  }
+
+  @include media-min ($md) {
+    padding: 60px 120px;
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__submit {
+      justify-self: center;
+    }
+  }
+
+  @include media-min ($xl) {
+    padding: 60px 190px;
+
+    &__form {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      align-items: start;
+    }
+
+    &__full-row {
+      grid-column: span 3;
+    }
+  }
+}

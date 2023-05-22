@@ -1,0 +1,72 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: calc(100 * var(--vh, 1vh));
+  color: var(--white);
+  background-color: var(--bg-dark);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.57) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black-30);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    max-width: 510px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  @include media-min ($xl) {
+    &__content {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      max-width: 630px;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+    }
+  }
+}

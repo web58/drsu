@@ -1,0 +1,116 @@
+.modal {
+  position: relative;
+  margin: 0 auto;
+  padding: 30px;
+  width: calc(100% - 30px);
+  max-width: 330px;
+  background-color: var(--white);
+  border-radius: 2px;
+
+  &__close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    color: var(--light-gray);
+    cursor: pointer;
+  }
+
+  &__title {
+    font-family: $alt-font, Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    line-height: 1.15;
+    font-weight: 400;
+    padding-left: 8px;
+    margin-bottom: 24px;
+    color: var(--black);
+
+    &::before {
+      border-width: 30px 30px 0 0;
+    }
+  }
+
+  &__form {
+    --text-color: var(--dark-gray);
+    --border-color: var(--gray);
+  }
+
+  &__text {
+    margin-bottom: 24px;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+
+  @include media-min ($md) {
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    padding-right: 100px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 80px;
+      background-image: url('../img/lines-bg.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    &__close {
+      top: 12px;
+      right: 18px;
+    }
+
+    &__btn {
+      width: auto;
+    }
+
+    &__submit {
+      justify-self: start;
+    }
+  }
+
+  @include media-min ($xl) {
+    max-width: 700px;
+    padding: 60px;
+    padding-right: 120px;
+
+    &__close {
+      width: 40px;
+      height: 40px;
+      transition: color .2s ease-in-out;
+
+      &:hover {
+        color: var(--dark-gray);
+      }
+    }
+
+    &__close-icon {
+      width: 25px;
+      height: 25px;
+    }
+
+    &__title {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.hystmodal {
+  &__wrap {
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,64 @@
+.service-advantages {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    display: grid;
+    gap: 20px;
+
+    & ul {
+      list-style-type: disc;
+
+      & li::marker {
+        color: var(--accent);
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 24px;
+    background-color: var(--white);
+    border-radius: 2px;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      pointer-events: none;
+      right: 0;
+      top: 0;
+      border-color: transparent var(--accent) transparent transparent;
+      border-width: 0 32px 32px 0;
+    }
+  }
+
+  &__item-title {
+    display: block;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  @include media-min ($md) {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include media-min ($xl) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

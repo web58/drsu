@@ -1,0 +1,79 @@
+.detail-page {
+  padding-top: 10px;
+  padding-bottom: 60px;
+
+  &__top {
+    display: grid;
+    row-gap: 30px;
+    margin-bottom: 20px;
+    color: var(--black);
+  }
+
+  &__content {
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+    & ul li::marker {
+      color: var(--accent);
+    }
+  }
+
+  &__poster {
+    display: block;
+    width: 100%;
+    height: 200px;
+  }
+
+  & table {
+    background-color: var(--white);
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  & thead {
+    color: var(--gray);
+    border-bottom: 1px solid var(--accent);
+    text-align: left;
+  }
+
+  & tr {
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--light-gray);
+    }
+  }
+
+  & th {
+    vertical-align: top;
+    padding: 8px;
+  }
+
+  & td {
+    vertical-align: top;
+    padding: 8px;
+  }
+
+  @include media-min ($md) {
+    padding-bottom: 80px;
+
+    &__poster {
+      height: 350px;
+    }
+  }
+
+  @include media-min ($xl) {
+    padding-top: 20px;
+    padding-bottom: 100px;
+
+    &__col-8 {
+      max-width: 66.6667%;
+    }
+
+    &__poster {
+      height: 420px;
+
+      &--ordered {
+        order: 1px;
+      }
+    }
+  }
+}

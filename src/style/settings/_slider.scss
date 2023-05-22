@@ -1,0 +1,24 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+
+  &__wrapper {
+    box-sizing: border-box;
+  }
+
+  &__pagination {
+    --swiper-theme-color: var(--accent);
+    --swiper-pagination-bullet-width: 6px;
+    --swiper-pagination-bullet-height: 6px;
+
+    margin-top: 12px;
+    text-align: center;
+    overflow: hidden;
+
+    & .swiper-pagination-bullet-active {
+      width: 32px;
+      border-radius: 99em;
+      transition: width .2s ease-in-out;
+    }
+  }
+}

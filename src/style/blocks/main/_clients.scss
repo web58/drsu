@@ -1,0 +1,33 @@
+.clients {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--white);
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__slides {
+    transition-timing-function: linear;
+  }
+
+  &__slide {
+    & img {
+      display: block;
+      width: 90px;
+      height: 34px;
+    }
+  }
+
+  @include media-min ($xl) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    &__slide {
+      & img {
+        width: 160px;
+        height: 60px;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.decor-ol {
+  display: grid;
+  gap: 16px;
+  align-items: start;
+  padding: 0;
+  list-style: none;
+  counter-reset: steps;
+
+  &__item {
+    position: relative;
+    padding: 16px;
+    padding-left: 76px;
+    counter-increment: steps;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: var(--white);
+
+    &::before {
+      content: counter(steps);
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      font-family: $alt-font, Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 30px;
+      padding: 10px 0;
+      min-width: 60px;
+      color: var(--white);
+      background-color: var(--accent);
+      text-align: center;
+    }
+
+    &--lead-zero {
+      &::before {
+        content: '0'counter(steps);
+      }
+    }
+  }
+
+  &__title {
+    display: block;
+    font-weight: 700;
+  }
+
+  &__text {
+    margin-top: 16px;
+  }
+
+  @include media-min ($md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
